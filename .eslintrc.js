@@ -20,6 +20,6 @@ module.exports = {
         ecmaVersion: 'latest',
     },
     rules: {
-        'no-unused-vars': ['warn'],
+        indent: ['error', 4],
     },
 };
