@@ -1,50 +1,54 @@
-function isEmpty(input) {
-    return input.value.trim('') === '';
-}
-
-function isValidEmail(input) {
-    return /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(input.value);
-}
-
-function isValidCountryCode(input) {
-    return /^[A-Z]{2}$/.test(input.value);
-}
-
-function isValidZipCode(input) {
-    return /^\d{5}(-\d{4})?$/.test(input.value);
-}
-
-function validate(input) {
-    // Access input' error mesage section.
-    const errorMessage = input.nextElementSibling;
-
-    // Check if input is empty.
-    if (isEmpty(input)) {
-        errorMessage.textContent = 'Input is missing!';
-    } else {
-        errorMessage.textContent = '';
+class Input {
+    constructor(input) {
+        this.input = input;
+        this.errorMessage = '';
     }
 
-    switch (input.id) {
-        case 'email':
-            errorMessage.textContent = isValidEmail(input) ? '' : 'Input a valid email address!';
-            break;
+    isEmpty() {
+        return this.input.value.trim('') === '';
+    }
 
-        case 'country-code':
-            errorMessage.textContent = isValidCountryCode(input) ? '' : 'Input a valid country code!';
-            break;
+    isValidEmail() {
+        return /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(this.input.value);
+    }
 
-        case 'zip-code':
-            errorMessage.textContent = isValidZipCode(input) ? '' : 'Input a valid zip code!';
-            break;
+    isValidCountryCode() {
+        return /^[A-Z]{2}$/.test(this.input.value);
+    }
 
-        default:
-            break;
+    isValidZipCode() {
+        return /^\d{5}(-\d{4})?$/.test(this.input.value);
+    }
+
+    validate() {
+        // Check if input is empty.
+        if (this.isEmpty(this.input)) {
+            this.errorMessage = 'Input is missing!';
+        } else {
+            this.errorMessage = '';
+        }
+
+        switch (this.input.id) {
+            case 'email':
+                this.errorMessage = this.isValidEmail(this.input) ? '' : 'Input a valid email address!';
+                break;
+
+            case 'country-code':
+                this.errorMessage = this.isValidCountryCode(this.input) ? '' : 'Input a valid country code!';
+                break;
+
+            case 'zip-code':
+                this.errorMessage = this.isValidZipCode(this.input) ? '' : 'Input a valid zip code!';
+                break;
+
+            default:
+                break;
+        }
     }
 }
 
 function addValidation(form) {
-    // Get all referece to the input
-    const inputs = document.querySelectorAll('input');
+    // Get all referece to the input and put them into 'Input' objects.
+    const inputs = [...document.querySelectorAll('input')].map((input) => new Input(input));
 }
 addValidation(document.querySelector('form'));
