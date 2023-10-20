@@ -39,6 +39,16 @@ class Input {
                     this.errorMessage = this.isValidZipCode(this.input) ? '' : 'Input a valid zip code!';
                     break;
 
+                case 'password':
+                    this.passwordPartner.errorMessage =
+                        this.input.value === this.passwordPartner.input.value ? '' : 'Passwords do not match';
+                    break;
+
+                case 'confirm-password':
+                    this.errorMessage =
+                        this.input.value === this.passwordPartner.input.value ? '' : 'Passwords do not match';
+                    break;
+
                 default:
                     this.errorMessage = '';
             }
