@@ -40,6 +40,7 @@ class Input {
                     break;
 
                 case 'password':
+                    this.errorMessage = '';
                     this.passwordPartner.errorMessage =
                         this.input.value === this.passwordPartner.input.value ? '' : 'Passwords do not match';
                     break;
