@@ -25,24 +25,22 @@ class Input {
         if (this.isEmpty(this.input)) {
             this.errorMessage = 'Input is missing!';
         } else {
-            this.errorMessage = '';
-        }
+            switch (this.input.id) {
+                case 'email':
+                    this.errorMessage = this.isValidEmail(this.input) ? '' : 'Input a valid email address!';
+                    break;
 
-        switch (this.input.id) {
-            case 'email':
-                this.errorMessage = this.isValidEmail(this.input) ? '' : 'Input a valid email address!';
-                break;
+                case 'country-code':
+                    this.errorMessage = this.isValidCountryCode(this.input) ? '' : 'Input a valid country code!';
+                    break;
 
-            case 'country-code':
-                this.errorMessage = this.isValidCountryCode(this.input) ? '' : 'Input a valid country code!';
-                break;
+                case 'zip-code':
+                    this.errorMessage = this.isValidZipCode(this.input) ? '' : 'Input a valid zip code!';
+                    break;
 
-            case 'zip-code':
-                this.errorMessage = this.isValidZipCode(this.input) ? '' : 'Input a valid zip code!';
-                break;
-
-            default:
-                break;
+                default:
+                    this.errorMessage = '';
+            }
         }
     }
 }
