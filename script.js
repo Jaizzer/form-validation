@@ -2,6 +2,7 @@ class Input {
     constructor(input) {
         this.input = input;
         this.errorMessage = '';
+        this.passwordPartner = '';
     }
 
     isEmpty() {
@@ -48,5 +49,12 @@ class Input {
 function addValidation(form) {
     // Get all referece to the input and put them into 'Input' objects.
     const inputs = [...document.querySelectorAll('input')].map((input) => new Input(input));
+
+    const passWordInput = inputs.find((element) => element.input.id === 'password');
+    const confirmPasswordInput = inputs.find((element) => element.input.id === 'confirm-password');
+
+    // Link password and confirm password inputs.
+    passWordInput.passwordPartner = confirmPasswordInput;
+    confirmPasswordInput.passwordPartner = passWordInput;
 }
 addValidation(document.querySelector('form'));
