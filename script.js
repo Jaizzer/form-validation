@@ -61,7 +61,7 @@ class Input {
 
 function addValidation(form) {
     // Get all referece to the input and put them into 'Input' objects.
-    const inputs = [...document.querySelectorAll('input')].map((input) => new Input(input));
+    const inputs = [...form.querySelectorAll('input')].map((input) => new Input(input));
 
     const passWordInput = inputs.find((element) => element.input.id === 'password');
     const confirmPasswordInput = inputs.find((element) => element.input.id === 'confirm-password');
