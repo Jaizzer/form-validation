@@ -3,6 +3,7 @@ class Input {
         this.input = input;
         this.errorMessage = '';
         this.passwordPartner = '';
+        this.errorMessageContainer = input.nextElementSibling;
     }
 
     isEmpty() {
@@ -54,6 +55,7 @@ class Input {
                     this.errorMessage = '';
             }
         }
+        this.errorMessageContainer.textContent = this.errorMessage;
     }
 }
 
