@@ -24,4 +24,8 @@ body {
 form {
     padding: clamp(10px, 5%, 25px);
     border-radius: 10px;
+
+    display: grid;
+    grid-template-columns: auto;
+    gap: 10px;
 }
