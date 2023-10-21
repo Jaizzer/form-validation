@@ -51,3 +51,18 @@ input {
 
     border: 1px solid #b3b3b3;
 }
+
+button[type=submit] {
+    border-radius: 5px;
+
+    padding: 6px;
+
+    background-color: grey;
+    
+    font-size: 17px;
+    color: white;
+}
+
+button[type=submit]:hover {
+    background-color: #b3b3b3;
+}
