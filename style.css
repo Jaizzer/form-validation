@@ -33,6 +33,6 @@ form {
 .input-container {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 25px 25px 15px;
+    grid-template-rows: repeat(3, auto);
     gap: 5px;
 }
