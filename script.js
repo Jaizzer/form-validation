@@ -77,7 +77,7 @@ class Input {
                         this.input.value !== this.passwordPartner.input.value &&
                         this.passwordPartner.input.value !== ''
                     ) {
-                        this.passwordPartner.errorMessageContainer.textContent = 'Passwords do not match';
+                        this.errorMessage = 'Passwords do not match';
                     }
                     break;
 
