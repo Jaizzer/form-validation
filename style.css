@@ -38,3 +38,8 @@ form {
     grid-template-rows: repeat(3, auto);
     gap: 5px;
 }
+
+.error {
+    color: red;
+    font-size: 12px;
+}
