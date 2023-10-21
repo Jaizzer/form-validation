@@ -32,6 +32,7 @@ class Input {
                 case 'email':
                     if (this.isValidEmail(this.input)) {
                         this.errorMessage = '';
+                        this.isValid = true;
                     } else {
                         this.errorMessage = 'Input a valid email address!';
                     }
@@ -40,6 +41,7 @@ class Input {
                 case 'country-code':
                     if (this.isValidCountryCode(this.input)) {
                         this.errorMessage = '';
+                        this.isValid = true;
                     } else {
                         this.errorMessage = 'Input a valid country code!';
                     }
@@ -48,6 +50,7 @@ class Input {
                 case 'zip-code':
                     if (this.isValidZipCode(this.input)) {
                         this.errorMessage = '';
+                        this.isValid = true;
                     } else {
                         this.errorMessage = 'Input a valid zip code!';
                     }
@@ -60,6 +63,7 @@ class Input {
                         this.passwordPartner.input.value !== ''
                     ) {
                         this.passwordPartner.errorMessageContainer.textContent = '';
+                        this.isValid = true;
                     } else if (
                         this.input.value !== this.passwordPartner.input.value &&
                         this.passwordPartner.input.value !== ''
@@ -74,6 +78,7 @@ class Input {
                         this.passwordPartner.input.value !== ''
                     ) {
                         this.errorMessage = '';
+                        this.isValid = true;
                     } else if (
                         this.input.value !== this.passwordPartner.input.value &&
                         this.passwordPartner.input.value !== ''
