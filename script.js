@@ -23,6 +23,10 @@ class Input {
         return /^\d{5}(-\d{4})?$/.test(this.input.value);
     }
 
+    displayError(errorMessage) {
+        this.errorMessageContainer.textContent = errorMessage;
+    }
+
     validate() {
         // Check if input is empty.
         if (this.isEmpty(this.input)) {
@@ -62,13 +66,13 @@ class Input {
                         this.input.value === this.passwordPartner.input.value &&
                         this.passwordPartner.input.value !== ''
                     ) {
-                        this.passwordPartner.errorMessageContainer.textContent = '';
+                        this.passwordPartner.displayError('');
                         this.isValid = true;
                     } else if (
                         this.input.value !== this.passwordPartner.input.value &&
                         this.passwordPartner.input.value !== ''
                     ) {
-                        this.passwordPartner.errorMessageContainer.textContent = 'Passwords do not match';
+                        this.passwordPartner.displayError('Passwords do not match');
                     }
                     break;
 
@@ -91,7 +95,7 @@ class Input {
                     this.errorMessage = '';
             }
         }
-        this.errorMessageContainer.textContent = this.errorMessage;
+        this.displayError(this.errorMessage);
     }
 }
 
