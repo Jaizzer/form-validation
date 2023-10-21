@@ -1,7 +1,7 @@
 class Input {
     constructor(input) {
         this.input = input;
-        this.errorMessage = '';
+        this.errorMessage = 'Input is missing!';
         this.passwordPartner = '';
         this.errorMessageContainer = input.nextElementSibling;
         this.isValid = false;
