@@ -105,5 +105,19 @@ function addValidation(form) {
     // Link password and confirm password inputs.
     passWordInput.passwordPartner = confirmPasswordInput;
     confirmPasswordInput.passwordPartner = passWordInput;
+
+    // Validate when user clicks out of current input.
+    inputs.forEach((element) => {
+        element.input.addEventListener('blur', () => {
+            element.validate();
+        });
+    });
+
+    // Validate when the user inputs in the current input.
+    inputs.forEach((element) => {
+        element.input.addEventListener('input', () => {
+            element.validate();
+        });
+    });
 }
 addValidation(document.querySelector('form'));
