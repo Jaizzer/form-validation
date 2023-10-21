@@ -42,13 +42,31 @@ class Input {
 
                 case 'password':
                     this.errorMessage = '';
-                    this.passwordPartner.errorMessageContainer.textContent =
-                        this.input.value === this.passwordPartner.input.value ? '' : 'Passwords do not match';
+                    if (
+                        this.input.value === this.passwordPartner.input.value &&
+                        this.passwordPartner.input.value !== ''
+                    ) {
+                        this.passwordPartner.errorMessageContainer.textContent = '';
+                    } else if (
+                        this.input.value !== this.passwordPartner.input.value &&
+                        this.passwordPartner.input.value !== ''
+                    ) {
+                        this.passwordPartner.errorMessageContainer.textContent = 'Passwords do not match';
+                    }
                     break;
 
                 case 'confirm-password':
-                    this.errorMessage =
-                        this.input.value === this.passwordPartner.input.value ? '' : 'Passwords do not match';
+                    if (
+                        this.input.value === this.passwordPartner.input.value &&
+                        this.passwordPartner.input.value !== ''
+                    ) {
+                        this.errorMessage = '';
+                    } else if (
+                        this.input.value !== this.passwordPartner.input.value &&
+                        this.passwordPartner.input.value !== ''
+                    ) {
+                        this.passwordPartner.errorMessageContainer.textContent = 'Passwords do not match';
+                    }
                     break;
 
                 default:
