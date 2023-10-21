@@ -123,5 +123,23 @@ function addValidation(form) {
             element.validate();
         });
     });
+
+    // Validate inputs when form is submitted.
+    form.addEventListener('submit', (event) => {
+        // Prevent form submission.
+        event.preventDefault();
+
+        // Access form's parent element.
+        const formsParent = form.parentElement;
+
+        // Check if all inputs are valid.
+        inputs.forEach((input) => input.validate());
+        const allInputsAreValid = inputs.every((input) => input.isValid);
+
+        // High five user if all inputs are valid.
+        if (allInputsAreValid) {
+            formsParent.textContent = "You did it! Here's a high five to you🙏";
+        }
+    });
 }
 addValidation(document.querySelector('form'));
