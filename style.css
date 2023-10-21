@@ -20,3 +20,7 @@ body {
 
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
+
+form {
+    padding: clamp(10px, 5%, 25px);
+}
