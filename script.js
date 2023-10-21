@@ -29,15 +29,27 @@ class Input {
         } else {
             switch (this.input.id) {
                 case 'email':
-                    this.errorMessage = this.isValidEmail(this.input) ? '' : 'Input a valid email address!';
+                    if (this.isValidEmail(this.input)) {
+                        this.errorMessage = '';
+                    } else {
+                        this.errorMessage = 'Input a valid email address!';
+                    }
                     break;
 
                 case 'country-code':
-                    this.errorMessage = this.isValidCountryCode(this.input) ? '' : 'Input a valid country code!';
+                    if (this.isValidCountryCode(this.input)) {
+                        this.errorMessage = '';
+                    } else {
+                        this.errorMessage = 'Input a valid country code!';
+                    }
                     break;
 
                 case 'zip-code':
-                    this.errorMessage = this.isValidZipCode(this.input) ? '' : 'Input a valid zip code!';
+                    if (this.isValidZipCode(this.input)) {
+                        this.errorMessage = '';
+                    } else {
+                        this.errorMessage = 'Input a valid zip code!';
+                    }
                     break;
 
                 case 'password':
