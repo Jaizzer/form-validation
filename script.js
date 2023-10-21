@@ -4,6 +4,7 @@ class Input {
         this.errorMessage = '';
         this.passwordPartner = '';
         this.errorMessageContainer = input.nextElementSibling;
+        this.isValid = false;
     }
 
     isEmpty() {
