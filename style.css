@@ -79,6 +79,8 @@ input {
 }
 
 button[type=submit] {
+    border: 0px;
+
     border-radius: 5px;
 
     padding: 6px;
