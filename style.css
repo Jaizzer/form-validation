@@ -26,6 +26,18 @@ body {
     flex-direction: row;
 }
 
+.image-container {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    
+    overflow: hidden;
+}
+
+img {
+    height: 550px;
+}
+
 form {
     padding: clamp(10px, 5%, 25px);
     border-radius: 10px;
