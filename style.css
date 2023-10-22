@@ -21,6 +21,11 @@ body {
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 
+.content {
+    display: flex;
+    flex-direction: row;
+}
+
 form {
     padding: clamp(10px, 5%, 25px);
     border-radius: 10px;
