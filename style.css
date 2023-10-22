@@ -52,7 +52,11 @@ img {
 }
 
 form {
-    padding: clamp(10px, 5%, 25px);
+    padding-top: clamp(10px, 5%, 25px);
+    padding-bottom: clamp(10px, 5%, 25px);
+
+    padding-left: clamp(10px, 15%, 80px);
+    padding-right: clamp(10px, 15%, 80px);
 
     display: grid;
     grid-template-columns: auto;
