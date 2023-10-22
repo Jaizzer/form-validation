@@ -2,6 +2,8 @@
 
 This project is a web-based student signup form with real-time input validation. Users can enter their email, country code, zip code, and set a password, and the system provides instant feedback on the validity of the inputs.
 
+Try it [here](https://jaizzer.github.io/form-validation/)!
+
 ## How It Works
 
 -   The webpage is designed to be responsive and visually appealing, using HTML and CSS.
