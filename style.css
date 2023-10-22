@@ -37,6 +37,11 @@ body {
         grid-template-columns: auto;
         grid-template-rows: 140px auto;
     }
+
+    .form-title {
+        margin-bottom: 8px;
+        margin-top: 8px;
+    }
 }
 
 .image-container {
