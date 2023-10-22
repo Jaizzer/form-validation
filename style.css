@@ -16,7 +16,7 @@ body {
     display: grid;
     justify-content: center;
     align-content: center;
-    grid-template-columns: clamp(200px, 90%, 600px);
+    grid-template-columns: clamp(300px, 40%, 600px);
 
     font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
