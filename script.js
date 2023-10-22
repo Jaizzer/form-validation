@@ -139,6 +139,7 @@ function addValidation(form) {
         // High five user if all inputs are valid.
         if (allInputsAreValid) {
             formsParent.textContent = "You did it! Here's a high five to you🙏";
+            formsParent.classList.add('completed');
         }
     });
 }
