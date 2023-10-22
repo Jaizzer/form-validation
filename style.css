@@ -24,6 +24,11 @@ body {
 .content {
     display: flex;
     flex-direction: row;
+
+    border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+    overflow: hidden;
 }
 
 .image-container {
@@ -40,14 +45,11 @@ img {
 
 form {
     padding: clamp(10px, 5%, 25px);
-    border-radius: 10px;
 
     display: grid;
     grid-template-columns: auto;
     align-items: center;
     gap: 7px;
-
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .form-title {
